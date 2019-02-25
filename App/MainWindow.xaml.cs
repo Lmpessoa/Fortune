@@ -79,9 +79,10 @@ namespace Lmpessoa.Fortune {
          exStyle |= (int) ExtendedWindowStyles.WS_EX_TOOLWINDOW;
          SetWindowLong(helper.Handle, (int) GetWindowLongFields.GWL_EXSTYLE, (IntPtr) exStyle);
 
+         double dpiFactor = System.Windows.PresentationSource.FromVisual(this).CompositionTarget.TransformToDevice.M11;
          System.Drawing.Rectangle screen = Screen.PrimaryScreen.WorkingArea;
          CloseButton.Margin = new Thickness(Width - 20, 0, 0, 0);
-         Left = (screen.Width - Width) / 2;
+         Left = ((screen.Width / dpiFactor) - Width) / 2;
          DoubleAnimation animation = new DoubleAnimation() {
             From = -Height,
             To = 12,

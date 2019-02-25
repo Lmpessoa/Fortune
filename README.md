@@ -1,4 +1,4 @@
-![Fortune icon](Resources/Fortune-64.png)
+![Fortune icon](Resources/Header.svg)
 
 This is a simple application port of the fortune command from Linux for Windows 10.
 
